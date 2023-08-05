@@ -1,0 +1,27 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "qrcode-app"
+client_id = "5f9304b1a4f69097ccbb0fc91bb90aa0"
+application_url = "https://gnome-phillips-pci-compact.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://gnome-phillips-pci-compact.trycloudflare.com/auth/callback",
+  "https://gnome-phillips-pci-compact.trycloudflare.com/auth/shopify/callback",
+  "https://gnome-phillips-pci-compact.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2023-07"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "mason-test-qrcode.myshopify.com"
