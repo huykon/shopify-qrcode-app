@@ -2,7 +2,7 @@
 
 name = "qrcode-app"
 client_id = "5f9304b1a4f69097ccbb0fc91bb90aa0"
-application_url = "https://gnome-phillips-pci-compact.trycloudflare.com"
+application_url = "https://environmental-cheapest-furthermore-tissue.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,9 +11,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://gnome-phillips-pci-compact.trycloudflare.com/auth/callback",
-  "https://gnome-phillips-pci-compact.trycloudflare.com/auth/shopify/callback",
-  "https://gnome-phillips-pci-compact.trycloudflare.com/api/auth/callback"
+  "https://environmental-cheapest-furthermore-tissue.trycloudflare.com/auth/callback",
+  "https://environmental-cheapest-furthermore-tissue.trycloudflare.com/auth/shopify/callback",
+  "https://environmental-cheapest-furthermore-tissue.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
