@@ -18466,7 +18466,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           }
         });
       })();
-    }, []);
+    }, [productId]);
     const handleDelete = (id) => __async(this, null, function* () {
       const newIssues = issues.filter((issue) => issue.id !== id);
       setIssues(newIssues);

@@ -47,7 +47,7 @@ function App() {
         setIssues(parsedIssues);
       }
     })();
-  }, []);
+  }, [productId]);
 
   const handleDelete = async (id) => {
     // Create a new array of issues leaving out the one that you're deleting
