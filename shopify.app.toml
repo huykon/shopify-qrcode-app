@@ -2,7 +2,7 @@
 
 name = "qrcode-app"
 client_id = "5f9304b1a4f69097ccbb0fc91bb90aa0"
-application_url = "https://preference-vice-violence-trailers.trycloudflare.com"
+application_url = "https://term-open-resource-thing.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,9 +11,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://preference-vice-violence-trailers.trycloudflare.com/auth/callback",
-  "https://preference-vice-violence-trailers.trycloudflare.com/auth/shopify/callback",
-  "https://preference-vice-violence-trailers.trycloudflare.com/api/auth/callback"
+  "https://term-open-resource-thing.trycloudflare.com/auth/callback",
+  "https://term-open-resource-thing.trycloudflare.com/auth/shopify/callback",
+  "https://term-open-resource-thing.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

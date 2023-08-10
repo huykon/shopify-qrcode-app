@@ -34,6 +34,9 @@
       }
     return target;
   };
+  var __esm = (fn, res) => function __init() {
+    return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
+  };
   var __commonJS = (cb, mod) => function __require() {
     return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
@@ -53,6 +56,26 @@
     isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
     mod
   ));
+  var __async = (__this, __arguments, generator) => {
+    return new Promise((resolve, reject) => {
+      var fulfilled = (value) => {
+        try {
+          step(generator.next(value));
+        } catch (e) {
+          reject(e);
+        }
+      };
+      var rejected = (value) => {
+        try {
+          step(generator.throw(value));
+        } catch (e) {
+          reject(e);
+        }
+      };
+      var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
+      step((generator = generator.apply(__this, __arguments)).next());
+    });
+  };
 
   // node_modules/.pnpm/object-assign@4.1.1/node_modules/object-assign/index.js
   var require_object_assign = __commonJS({
@@ -1760,6 +1783,94 @@
       } else {
         module.exports = require_react_development();
       }
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/extension-points/index.mjs
+  var init_extension_points = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/extension-points/index.mjs"() {
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/extension-points.mjs
+  var init_extension_points2 = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/extension-points.mjs"() {
+      init_extension_points();
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/extension-api/ContainerApi/index.mjs
+  function isContainerApi(api) {
+    return "container" in api;
+  }
+  var init_ContainerApi = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/extension-api/ContainerApi/index.mjs"() {
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/extension-api/DataApi/index.mjs
+  function isDataApi(api) {
+    return "data" in api;
+  }
+  var init_DataApi = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/extension-api/DataApi/index.mjs"() {
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/extension-api/SessionTokenApi/index.mjs
+  function isSessionTokenApi(api) {
+    return "sessionToken" in api;
+  }
+  var init_SessionTokenApi = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/extension-api/SessionTokenApi/index.mjs"() {
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/extension-api/index.mjs
+  var init_extension_api = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/extension-api/index.mjs"() {
+      init_ContainerApi();
+      init_DataApi();
+      init_SessionTokenApi();
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/extension-api.mjs
+  var init_extension_api2 = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/extension-api.mjs"() {
+      init_extension_api();
+    }
+  });
+
+  // node_modules/.pnpm/@remote-ui+core@2.2.3/node_modules/@remote-ui/core/build/esm/types.mjs
+  var KIND_FRAGMENT;
+  var init_types = __esm({
+    "node_modules/.pnpm/@remote-ui+core@2.2.3/node_modules/@remote-ui/core/build/esm/types.mjs"() {
+      KIND_FRAGMENT = 3;
+    }
+  });
+
+  // node_modules/.pnpm/@remote-ui+core@2.2.3/node_modules/@remote-ui/core/build/esm/utilities.mjs
+  function isRemoteFragment(object) {
+    return object != null && object.kind === KIND_FRAGMENT;
+  }
+  var init_utilities = __esm({
+    "node_modules/.pnpm/@remote-ui+core@2.2.3/node_modules/@remote-ui/core/build/esm/utilities.mjs"() {
+      init_types();
+    }
+  });
+
+  // node_modules/.pnpm/@remote-ui+core@2.2.3/node_modules/@remote-ui/core/build/esm/index.mjs
+  var init_esm = __esm({
+    "node_modules/.pnpm/@remote-ui+core@2.2.3/node_modules/@remote-ui/core/build/esm/index.mjs"() {
+      init_utilities();
+    }
+  });
+
+  // node_modules/.pnpm/@remote-ui+core@2.2.3/node_modules/@remote-ui/core/index.mjs
+  var init_core = __esm({
+    "node_modules/.pnpm/@remote-ui+core@2.2.3/node_modules/@remote-ui/core/index.mjs"() {
+      init_esm();
     }
   });
 
@@ -15691,6 +15802,148 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }
   });
 
+  // node_modules/.pnpm/@remote-ui+react@4.5.14_react@17.0.0/node_modules/@remote-ui/react/build/esm/reconciler.mjs
+  function handleErrorInNextTick(error) {
+    setTimeout(() => {
+      throw error;
+    });
+  }
+  function has(object, property) {
+    return hasOwnProperty.call(object, property);
+  }
+  var import_react_reconciler, createReconciler, hasOwnProperty;
+  var init_reconciler = __esm({
+    "node_modules/.pnpm/@remote-ui+react@4.5.14_react@17.0.0/node_modules/@remote-ui/react/build/esm/reconciler.mjs"() {
+      import_react_reconciler = __toESM(require_react_reconciler(), 1);
+      createReconciler = (options) => {
+        var _options$primary;
+        return (0, import_react_reconciler.default)({
+          now: Date.now,
+          // Timeout
+          scheduleTimeout: setTimeout,
+          cancelTimeout: clearTimeout,
+          noTimeout: false,
+          // @see https://github.com/facebook/react/blob/master/packages/react-dom/src/client/ReactDOMHostConfig.js#L408
+          queueMicrotask: (callback) => Promise.resolve(null).then(callback).catch(handleErrorInNextTick),
+          isPrimaryRenderer: (_options$primary = options === null || options === void 0 ? void 0 : options.primary) !== null && _options$primary !== void 0 ? _options$primary : true,
+          supportsMutation: true,
+          supportsHydration: false,
+          supportsPersistence: false,
+          // Context
+          getRootHostContext() {
+            return {};
+          },
+          getChildHostContext(context) {
+            return context;
+          },
+          // Instances
+          createTextInstance(text, root) {
+            return root.createText(text);
+          },
+          createInstance(type, allProps, root) {
+            const _a = allProps, {
+              children: _children
+            } = _a, props = __objRest(_a, [
+              "children"
+            ]);
+            return root.createComponent(type, props);
+          },
+          // Updates
+          commitTextUpdate(text, _oldText, newText) {
+            text.updateText(newText);
+          },
+          prepareUpdate(_instance, _type, oldProps, newProps) {
+            const updateProps = {};
+            let needsUpdate = false;
+            for (const key in oldProps) {
+              if (!has(oldProps, key) || key === "children") {
+                continue;
+              }
+              if (!(key in newProps)) {
+                needsUpdate = true;
+                updateProps[key] = void 0;
+              } else if (oldProps[key] !== newProps[key]) {
+                needsUpdate = true;
+                updateProps[key] = newProps[key];
+              }
+            }
+            for (const key in newProps) {
+              if (!has(newProps, key) || key === "children") {
+                continue;
+              }
+              if (!(key in oldProps)) {
+                needsUpdate = true;
+                updateProps[key] = newProps[key];
+              }
+            }
+            return needsUpdate ? updateProps : null;
+          },
+          commitUpdate(instance, payload) {
+            instance.updateProps(payload);
+          },
+          // Update root
+          appendChildToContainer(remoteRoot, child) {
+            remoteRoot.appendChild(child);
+          },
+          insertInContainerBefore(remoteRoot, child, beforeChild) {
+            remoteRoot.insertChildBefore(child, beforeChild);
+          },
+          removeChildFromContainer(remoteRoot, child) {
+            remoteRoot.removeChild(child);
+          },
+          clearContainer(remoteRoot) {
+            for (const child of remoteRoot.children) {
+              remoteRoot.removeChild(child);
+            }
+          },
+          // Update children
+          appendInitialChild(parent, child) {
+            parent.appendChild(child);
+          },
+          appendChild(parent, child) {
+            parent.appendChild(child);
+          },
+          insertBefore(parent, newChild, beforeChild) {
+            parent.insertChildBefore(newChild, beforeChild);
+          },
+          removeChild(parent, child) {
+            parent.removeChild(child);
+          },
+          // Unknown
+          finalizeInitialChildren() {
+            return false;
+          },
+          shouldSetTextContent() {
+            return false;
+          },
+          getPublicInstance() {
+          },
+          prepareForCommit() {
+            return null;
+          },
+          resetAfterCommit() {
+          },
+          commitMount() {
+          },
+          preparePortalMount() {
+          }
+        });
+      };
+      ({
+        hasOwnProperty
+      } = {});
+    }
+  });
+
+  // node_modules/.pnpm/@remote-ui+react@4.5.14_react@17.0.0/node_modules/@remote-ui/react/build/esm/context.mjs
+  var import_react, RenderContext;
+  var init_context = __esm({
+    "node_modules/.pnpm/@remote-ui+react@4.5.14_react@17.0.0/node_modules/@remote-ui/react/build/esm/context.mjs"() {
+      import_react = __toESM(require_react(), 1);
+      RenderContext = /* @__PURE__ */ (0, import_react.createContext)(null);
+    }
+  });
+
   // node_modules/.pnpm/react@18.2.0/node_modules/react/cjs/react-jsx-runtime.development.js
   var require_react_jsx_runtime_development = __commonJS({
     "node_modules/.pnpm/react@18.2.0/node_modules/react/cjs/react-jsx-runtime.development.js"(exports) {
@@ -16559,11 +16812,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return jsxWithValidation(type, props, key, false);
             }
           }
-          var jsx4 = jsxWithValidationDynamic;
-          var jsxs2 = jsxWithValidationStatic;
+          var jsx3 = jsxWithValidationDynamic;
+          var jsxs = jsxWithValidationStatic;
           exports.Fragment = REACT_FRAGMENT_TYPE;
-          exports.jsx = jsx4;
-          exports.jsxs = jsxs2;
+          exports.jsx = jsx3;
+          exports.jsxs = jsxs;
         })();
       }
     }
@@ -16578,6 +16831,460 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       } else {
         module.exports = require_react_jsx_runtime_development();
       }
+    }
+  });
+
+  // node_modules/.pnpm/@remote-ui+react@4.5.14_react@17.0.0/node_modules/@remote-ui/react/build/esm/render.mjs
+  function render(element, root, callback, reconciler = defaultReconciler) {
+    let cached = cache.get(root);
+    if (!cached) {
+      const value = {
+        container: reconciler.createContainer(root, LEGACY_ROOT, false, null),
+        // We also cache the render context to avoid re-creating it on subsequent render calls
+        renderContext: {
+          root,
+          reconciler
+        }
+      };
+      cache.set(root, value);
+      cached = value;
+    }
+    const {
+      container,
+      renderContext
+    } = cached;
+    reconciler.updateContainer(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(RenderContext.Provider, {
+      value: renderContext,
+      children: element
+    }), container, null, callback);
+  }
+  var import_jsx_runtime, cache, LEGACY_ROOT, defaultReconciler;
+  var init_render = __esm({
+    "node_modules/.pnpm/@remote-ui+react@4.5.14_react@17.0.0/node_modules/@remote-ui/react/build/esm/render.mjs"() {
+      init_reconciler();
+      init_context();
+      import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+      cache = /* @__PURE__ */ new WeakMap();
+      LEGACY_ROOT = 0;
+      defaultReconciler = createReconciler();
+    }
+  });
+
+  // node_modules/.pnpm/@remote-ui+react@4.5.14_react@17.0.0/node_modules/@remote-ui/react/build/esm/hooks/render.mjs
+  function useRender() {
+    const render3 = (0, import_react2.useContext)(RenderContext);
+    if (render3 == null) {
+      throw new Error("No remote-ui Render instance found in context");
+    }
+    return render3;
+  }
+  var import_react2;
+  var init_render2 = __esm({
+    "node_modules/.pnpm/@remote-ui+react@4.5.14_react@17.0.0/node_modules/@remote-ui/react/build/esm/hooks/render.mjs"() {
+      import_react2 = __toESM(require_react(), 1);
+      init_context();
+    }
+  });
+
+  // node_modules/.pnpm/@remote-ui+react@4.5.14_react@17.0.0/node_modules/@remote-ui/react/build/esm/components.mjs
+  function createRemoteReactComponent(componentType, {
+    fragmentProps
+  } = {}) {
+    if (!fragmentProps || !fragmentProps.length) {
+      return componentType;
+    }
+    const wrapper = createComponentWrapper(componentType, fragmentProps);
+    wrapper.displayName = componentType;
+    return wrapper;
+  }
+  function createComponentWrapper(componentType, fragmentProps) {
+    const Component = componentType;
+    return /* @__PURE__ */ (0, import_react3.memo)(function ComponentWrapper(_a) {
+      var _b = _a, {
+        children: externalChildren = []
+      } = _b, externalProps = __objRest(_b, [
+        "children"
+      ]);
+      const fragments = (0, import_react3.useRef)({});
+      const {
+        root,
+        reconciler
+      } = useRender();
+      const {
+        props,
+        children
+      } = (0, import_react3.useMemo)(() => {
+        const portals = [];
+        const props2 = {};
+        for (const key of Object.keys(externalProps)) {
+          const element = externalProps[key];
+          if (fragmentProps.includes(key) && /* @__PURE__ */ (0, import_react3.isValidElement)(element)) {
+            const currentFragment = fragments.current[key];
+            const fragment = isRemoteFragment(currentFragment) ? currentFragment : root.createFragment();
+            fragments.current[key] = fragment;
+            Object.assign(fragment, {
+              createText(...args) {
+                return root.createText(...args);
+              },
+              createComponent(type, ...args) {
+                return root.createComponent(type, ...args);
+              }
+            });
+            const portal = reconciler.createPortal(element, fragment, null, null);
+            portals.push(portal);
+            props2[key] = fragment;
+          } else {
+            props2[key] = element;
+            delete fragments.current[key];
+          }
+        }
+        return {
+          props: props2,
+          children: [...import_react3.Children.toArray(externalChildren), ...portals]
+        };
+      }, [externalChildren, externalProps, root, reconciler, fragments]);
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Component, __spreadProps(__spreadValues({}, props), {
+        children
+      }));
+    });
+  }
+  var import_react3, import_jsx_runtime2;
+  var init_components = __esm({
+    "node_modules/.pnpm/@remote-ui+react@4.5.14_react@17.0.0/node_modules/@remote-ui/react/build/esm/components.mjs"() {
+      import_react3 = __toESM(require_react(), 1);
+      init_core();
+      import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
+      init_render2();
+    }
+  });
+
+  // node_modules/.pnpm/@remote-ui+react@4.5.14_react@17.0.0/node_modules/@remote-ui/react/build/esm/index.mjs
+  var init_esm2 = __esm({
+    "node_modules/.pnpm/@remote-ui+react@4.5.14_react@17.0.0/node_modules/@remote-ui/react/build/esm/index.mjs"() {
+      init_render();
+      init_components();
+    }
+  });
+
+  // node_modules/.pnpm/@remote-ui+react@4.5.14_react@17.0.0/node_modules/@remote-ui/react/index.mjs
+  var init_react = __esm({
+    "node_modules/.pnpm/@remote-ui+react@4.5.14_react@17.0.0/node_modules/@remote-ui/react/index.mjs"() {
+      init_esm2();
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/api.mjs
+  function extend(extensionPoint, callback) {
+    return self.shopify.extend(extensionPoint, callback);
+  }
+  var init_api = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/api.mjs"() {
+    }
+  });
+
+  // node_modules/.pnpm/@remote-ui+core@2.1.17/node_modules/@remote-ui/core/build/esm/component.mjs
+  function createRemoteComponent(componentType) {
+    return componentType;
+  }
+  var init_component = __esm({
+    "node_modules/.pnpm/@remote-ui+core@2.1.17/node_modules/@remote-ui/core/build/esm/component.mjs"() {
+    }
+  });
+
+  // node_modules/.pnpm/@remote-ui+core@2.1.17/node_modules/@remote-ui/core/build/esm/index.mjs
+  var init_esm3 = __esm({
+    "node_modules/.pnpm/@remote-ui+core@2.1.17/node_modules/@remote-ui/core/build/esm/index.mjs"() {
+      init_component();
+    }
+  });
+
+  // node_modules/.pnpm/@remote-ui+core@2.1.17/node_modules/@remote-ui/core/index.mjs
+  var init_core2 = __esm({
+    "node_modules/.pnpm/@remote-ui+core@2.1.17/node_modules/@remote-ui/core/index.mjs"() {
+      init_esm3();
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/components/BlockStack/BlockStack.mjs
+  var BlockStack;
+  var init_BlockStack = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/components/BlockStack/BlockStack.mjs"() {
+      init_core2();
+      BlockStack = createRemoteComponent("BlockStack");
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/components/Button/Button.mjs
+  var Button;
+  var init_Button = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/components/Button/Button.mjs"() {
+      init_core2();
+      Button = createRemoteComponent("Button");
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/components/Card/Card.mjs
+  var Card;
+  var init_Card = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/components/Card/Card.mjs"() {
+      init_core2();
+      Card = createRemoteComponent("Card");
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/components/Checkbox/Checkbox.mjs
+  var Checkbox;
+  var init_Checkbox = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/components/Checkbox/Checkbox.mjs"() {
+      init_core2();
+      Checkbox = createRemoteComponent("Checkbox");
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/components/InlineStack/InlineStack.mjs
+  var InlineStack;
+  var init_InlineStack = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/components/InlineStack/InlineStack.mjs"() {
+      init_core2();
+      InlineStack = createRemoteComponent("InlineStack");
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/components/Text/Text.mjs
+  var Text;
+  var init_Text = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/components/Text/Text.mjs"() {
+      init_core2();
+      Text = createRemoteComponent("Text");
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/components/TextBlock/TextBlock.mjs
+  var TextBlock;
+  var init_TextBlock = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/components/TextBlock/TextBlock.mjs"() {
+      init_core2();
+      TextBlock = createRemoteComponent("TextBlock");
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/components/TextField/TextField.mjs
+  var TextField;
+  var init_TextField = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/components/TextField/TextField.mjs"() {
+      init_core2();
+      TextField = createRemoteComponent("TextField");
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/index.mjs
+  var init_esm4 = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/index.mjs"() {
+      init_api();
+      init_BlockStack();
+      init_Button();
+      init_Card();
+      init_Checkbox();
+      init_InlineStack();
+      init_Text();
+      init_TextBlock();
+      init_TextField();
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/index.mjs
+  var init_admin_ui_extensions = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/index.mjs"() {
+      init_esm4();
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/extension-api/utils.mjs
+  function useExtensionApi() {
+    const api = (0, import_react4.useContext)(ExtensionApiContext);
+    if (api === null) {
+      throw new Error("No extension api found");
+    }
+    return api;
+  }
+  var import_react4, ExtensionApiContext;
+  var init_utils = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/extension-api/utils.mjs"() {
+      import_react4 = __toESM(require_react(), 1);
+      ExtensionApiContext = /* @__PURE__ */ (0, import_react4.createContext)(null);
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/api.mjs
+  function render2(renderCallback) {
+    return (root, api) => {
+      const element = renderCallback(api);
+      render(/* @__PURE__ */ (0, import_react6.createElement)(ExtensionApiContext.Provider, {
+        value: api
+      }, element), root, () => {
+        root.mount();
+      });
+    };
+  }
+  var import_react6;
+  var init_api2 = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/api.mjs"() {
+      init_react();
+      import_react6 = __toESM(require_react(), 1);
+      init_utils();
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/components/BlockStack/BlockStack.mjs
+  var BlockStack2;
+  var init_BlockStack2 = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/components/BlockStack/BlockStack.mjs"() {
+      init_admin_ui_extensions();
+      init_react();
+      BlockStack2 = createRemoteReactComponent(BlockStack);
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/components/Button/Button.mjs
+  var Button2;
+  var init_Button2 = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/components/Button/Button.mjs"() {
+      init_admin_ui_extensions();
+      init_react();
+      Button2 = createRemoteReactComponent(Button);
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/components/Card/Card.mjs
+  var Card2;
+  var init_Card2 = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/components/Card/Card.mjs"() {
+      init_admin_ui_extensions();
+      init_react();
+      Card2 = createRemoteReactComponent(Card);
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/components/Checkbox/Checkbox.mjs
+  var Checkbox2;
+  var init_Checkbox2 = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/components/Checkbox/Checkbox.mjs"() {
+      init_admin_ui_extensions();
+      init_react();
+      Checkbox2 = createRemoteReactComponent(Checkbox);
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/components/InlineStack/InlineStack.mjs
+  var InlineStack2;
+  var init_InlineStack2 = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/components/InlineStack/InlineStack.mjs"() {
+      init_admin_ui_extensions();
+      init_react();
+      InlineStack2 = createRemoteReactComponent(InlineStack);
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/components/Text/Text.mjs
+  var Text2;
+  var init_Text2 = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/components/Text/Text.mjs"() {
+      init_admin_ui_extensions();
+      init_react();
+      Text2 = createRemoteReactComponent(Text);
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/components/TextBlock/TextBlock.mjs
+  var TextBlock2;
+  var init_TextBlock2 = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/components/TextBlock/TextBlock.mjs"() {
+      init_admin_ui_extensions();
+      init_react();
+      TextBlock2 = createRemoteReactComponent(TextBlock);
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/components/TextField/TextField.mjs
+  var TextField2;
+  var init_TextField2 = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/components/TextField/TextField.mjs"() {
+      init_admin_ui_extensions();
+      init_react();
+      TextField2 = createRemoteReactComponent(TextField);
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/extension-api/ContainerApi/index.mjs
+  function useContainer() {
+    const api = useExtensionApi();
+    if (!isContainerApi(api)) {
+      throw new Error("No container api found");
+    }
+    return api.container;
+  }
+  var init_ContainerApi2 = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/extension-api/ContainerApi/index.mjs"() {
+      init_extension_api2();
+      init_utils();
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/extension-api/SessionTokenApi/index.mjs
+  function useSessionToken() {
+    const api = useExtensionApi();
+    if (!isSessionTokenApi(api)) {
+      throw new Error("No sessionToken api found");
+    }
+    return api.sessionToken;
+  }
+  var init_SessionTokenApi2 = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/extension-api/SessionTokenApi/index.mjs"() {
+      init_extension_api2();
+      init_utils();
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/extension-api/DataApi/index.mjs
+  function useData() {
+    const api = useExtensionApi();
+    if (!isDataApi(api)) {
+      throw new Error("No data api found");
+    }
+    return api.data;
+  }
+  var init_DataApi2 = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/extension-api/DataApi/index.mjs"() {
+      init_extension_api2();
+      init_utils();
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/index.mjs
+  var init_esm5 = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/index.mjs"() {
+      init_extension_points2();
+      init_extension_api2();
+      init_api2();
+      init_admin_ui_extensions();
+      init_BlockStack2();
+      init_Button2();
+      init_Card2();
+      init_Checkbox2();
+      init_InlineStack2();
+      init_Text2();
+      init_TextBlock2();
+      init_TextField2();
+      init_ContainerApi2();
+      init_SessionTokenApi2();
+      init_DataApi2();
+    }
+  });
+
+  // node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/index.mjs
+  var init_admin_ui_extensions_react = __esm({
+    "node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/index.mjs"() {
+      init_esm5();
     }
   });
 
@@ -17420,10 +18127,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return jsxWithValidation(type, props, key, false);
             }
           }
-          var jsx4 = jsxWithValidationDynamic;
-          var jsxs2 = jsxWithValidationStatic;
-          exports.jsx = jsx4;
-          exports.jsxs = jsxs2;
+          var jsx3 = jsxWithValidationDynamic;
+          var jsxs = jsxWithValidationStatic;
+          exports.jsx = jsx3;
+          exports.jsxs = jsxs;
         })();
       }
     }
@@ -17441,318 +18148,227 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }
   });
 
-  // node_modules/.pnpm/@remote-ui+core@2.2.3/node_modules/@remote-ui/core/build/esm/types.mjs
-  var KIND_FRAGMENT = 3;
-
-  // node_modules/.pnpm/@remote-ui+core@2.2.3/node_modules/@remote-ui/core/build/esm/utilities.mjs
-  function isRemoteFragment(object) {
-    return object != null && object.kind === KIND_FRAGMENT;
-  }
-
-  // node_modules/.pnpm/@remote-ui+react@4.5.14_react@17.0.0/node_modules/@remote-ui/react/build/esm/reconciler.mjs
-  var import_react_reconciler = __toESM(require_react_reconciler(), 1);
-  var createReconciler = (options) => {
-    var _options$primary;
-    return (0, import_react_reconciler.default)({
-      now: Date.now,
-      // Timeout
-      scheduleTimeout: setTimeout,
-      cancelTimeout: clearTimeout,
-      noTimeout: false,
-      // @see https://github.com/facebook/react/blob/master/packages/react-dom/src/client/ReactDOMHostConfig.js#L408
-      queueMicrotask: (callback) => Promise.resolve(null).then(callback).catch(handleErrorInNextTick),
-      isPrimaryRenderer: (_options$primary = options === null || options === void 0 ? void 0 : options.primary) !== null && _options$primary !== void 0 ? _options$primary : true,
-      supportsMutation: true,
-      supportsHydration: false,
-      supportsPersistence: false,
-      // Context
-      getRootHostContext() {
-        return {};
-      },
-      getChildHostContext(context) {
-        return context;
-      },
-      // Instances
-      createTextInstance(text, root) {
-        return root.createText(text);
-      },
-      createInstance(type, allProps, root) {
-        const _a = allProps, {
-          children: _children
-        } = _a, props = __objRest(_a, [
-          "children"
-        ]);
-        return root.createComponent(type, props);
-      },
-      // Updates
-      commitTextUpdate(text, _oldText, newText) {
-        text.updateText(newText);
-      },
-      prepareUpdate(_instance, _type, oldProps, newProps) {
-        const updateProps = {};
-        let needsUpdate = false;
-        for (const key in oldProps) {
-          if (!has(oldProps, key) || key === "children") {
-            continue;
-          }
-          if (!(key in newProps)) {
-            needsUpdate = true;
-            updateProps[key] = void 0;
-          } else if (oldProps[key] !== newProps[key]) {
-            needsUpdate = true;
-            updateProps[key] = newProps[key];
-          }
-        }
-        for (const key in newProps) {
-          if (!has(newProps, key) || key === "children") {
-            continue;
-          }
-          if (!(key in oldProps)) {
-            needsUpdate = true;
-            updateProps[key] = newProps[key];
-          }
-        }
-        return needsUpdate ? updateProps : null;
-      },
-      commitUpdate(instance, payload) {
-        instance.updateProps(payload);
-      },
-      // Update root
-      appendChildToContainer(remoteRoot, child) {
-        remoteRoot.appendChild(child);
-      },
-      insertInContainerBefore(remoteRoot, child, beforeChild) {
-        remoteRoot.insertChildBefore(child, beforeChild);
-      },
-      removeChildFromContainer(remoteRoot, child) {
-        remoteRoot.removeChild(child);
-      },
-      clearContainer(remoteRoot) {
-        for (const child of remoteRoot.children) {
-          remoteRoot.removeChild(child);
-        }
-      },
-      // Update children
-      appendInitialChild(parent, child) {
-        parent.appendChild(child);
-      },
-      appendChild(parent, child) {
-        parent.appendChild(child);
-      },
-      insertBefore(parent, newChild, beforeChild) {
-        parent.insertChildBefore(newChild, beforeChild);
-      },
-      removeChild(parent, child) {
-        parent.removeChild(child);
-      },
-      // Unknown
-      finalizeInitialChildren() {
-        return false;
-      },
-      shouldSetTextContent() {
-        return false;
-      },
-      getPublicInstance() {
-      },
-      prepareForCommit() {
-        return null;
-      },
-      resetAfterCommit() {
-      },
-      commitMount() {
-      },
-      preparePortalMount() {
-      }
-    });
-  };
-  function handleErrorInNextTick(error) {
-    setTimeout(() => {
-      throw error;
-    });
-  }
-  var {
-    hasOwnProperty
-  } = {};
-  function has(object, property) {
-    return hasOwnProperty.call(object, property);
-  }
-
-  // node_modules/.pnpm/@remote-ui+react@4.5.14_react@17.0.0/node_modules/@remote-ui/react/build/esm/context.mjs
-  var import_react = __toESM(require_react(), 1);
-  var RenderContext = /* @__PURE__ */ (0, import_react.createContext)(null);
-
-  // node_modules/.pnpm/@remote-ui+react@4.5.14_react@17.0.0/node_modules/@remote-ui/react/build/esm/render.mjs
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
-  var cache = /* @__PURE__ */ new WeakMap();
-  var LEGACY_ROOT = 0;
-  var defaultReconciler = createReconciler();
-  function render(element, root, callback, reconciler = defaultReconciler) {
-    let cached = cache.get(root);
-    if (!cached) {
-      const value = {
-        container: reconciler.createContainer(root, LEGACY_ROOT, false, null),
-        // We also cache the render context to avoid re-creating it on subsequent render calls
-        renderContext: {
-          root,
-          reconciler
-        }
-      };
-      cache.set(root, value);
-      cached = value;
-    }
-    const {
-      container,
-      renderContext
-    } = cached;
-    reconciler.updateContainer(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(RenderContext.Provider, {
-      value: renderContext,
-      children: element
-    }), container, null, callback);
-  }
-
-  // node_modules/.pnpm/@remote-ui+react@4.5.14_react@17.0.0/node_modules/@remote-ui/react/build/esm/components.mjs
-  var import_react3 = __toESM(require_react(), 1);
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
-
-  // node_modules/.pnpm/@remote-ui+react@4.5.14_react@17.0.0/node_modules/@remote-ui/react/build/esm/hooks/render.mjs
-  var import_react2 = __toESM(require_react(), 1);
-  function useRender() {
-    const render3 = (0, import_react2.useContext)(RenderContext);
-    if (render3 == null) {
-      throw new Error("No remote-ui Render instance found in context");
-    }
-    return render3;
-  }
-
-  // node_modules/.pnpm/@remote-ui+react@4.5.14_react@17.0.0/node_modules/@remote-ui/react/build/esm/components.mjs
-  function createRemoteReactComponent(componentType, {
-    fragmentProps
-  } = {}) {
-    if (!fragmentProps || !fragmentProps.length) {
-      return componentType;
-    }
-    const wrapper = createComponentWrapper(componentType, fragmentProps);
-    wrapper.displayName = componentType;
-    return wrapper;
-  }
-  function createComponentWrapper(componentType, fragmentProps) {
-    const Component = componentType;
-    return /* @__PURE__ */ (0, import_react3.memo)(function ComponentWrapper(_a) {
-      var _b = _a, {
-        children: externalChildren = []
-      } = _b, externalProps = __objRest(_b, [
-        "children"
-      ]);
-      const fragments = (0, import_react3.useRef)({});
-      const {
-        root,
-        reconciler
-      } = useRender();
-      const {
-        props,
-        children
-      } = (0, import_react3.useMemo)(() => {
-        const portals = [];
-        const props2 = {};
-        for (const key of Object.keys(externalProps)) {
-          const element = externalProps[key];
-          if (fragmentProps.includes(key) && /* @__PURE__ */ (0, import_react3.isValidElement)(element)) {
-            const currentFragment = fragments.current[key];
-            const fragment = isRemoteFragment(currentFragment) ? currentFragment : root.createFragment();
-            fragments.current[key] = fragment;
-            Object.assign(fragment, {
-              createText(...args) {
-                return root.createText(...args);
-              },
-              createComponent(type, ...args) {
-                return root.createComponent(type, ...args);
-              }
-            });
-            const portal = reconciler.createPortal(element, fragment, null, null);
-            portals.push(portal);
-            props2[key] = fragment;
-          } else {
-            props2[key] = element;
-            delete fragments.current[key];
-          }
-        }
-        return {
-          props: props2,
-          children: [...import_react3.Children.toArray(externalChildren), ...portals]
-        };
-      }, [externalChildren, externalProps, root, reconciler, fragments]);
-      return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Component, __spreadProps(__spreadValues({}, props), {
-        children
-      }));
-    });
-  }
-
-  // node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/api.mjs
-  var import_react6 = __toESM(require_react(), 1);
-
-  // node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/api.mjs
-  function extend(extensionPoint, callback) {
-    return self.shopify.extend(extensionPoint, callback);
-  }
-
-  // node_modules/.pnpm/@remote-ui+core@2.1.17/node_modules/@remote-ui/core/build/esm/component.mjs
-  function createRemoteComponent(componentType) {
-    return componentType;
-  }
-
-  // node_modules/.pnpm/@shopify+admin-ui-extensions@1.1.0/node_modules/@shopify/admin-ui-extensions/build/esm/components/Text/Text.mjs
-  var Text = createRemoteComponent("Text");
-
-  // node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/extension-api/utils.mjs
-  var import_react4 = __toESM(require_react(), 1);
-  var ExtensionApiContext = /* @__PURE__ */ (0, import_react4.createContext)(null);
-  function useExtensionApi() {
-    const api = (0, import_react4.useContext)(ExtensionApiContext);
-    if (api === null) {
-      throw new Error("No extension api found");
-    }
-    return api;
-  }
-
-  // node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/api.mjs
-  function render2(renderCallback) {
-    return (root, api) => {
-      const element = renderCallback(api);
-      render(/* @__PURE__ */ (0, import_react6.createElement)(ExtensionApiContext.Provider, {
-        value: api
-      }, element), root, () => {
-        root.mount();
-      });
-    };
-  }
-
-  // node_modules/.pnpm/@shopify+admin-ui-extensions-react@1.1.0_react@17.0.0/node_modules/@shopify/admin-ui-extensions-react/build/esm/components/Text/Text.mjs
-  var Text2 = createRemoteReactComponent(Text);
-
   // extensions/subscription-product/src/index.tsx
-  var import_jsx_runtime3 = __toESM(require_jsx_runtime2());
-  extend(
-    "Admin::Product::SubscriptionPlan::Add",
-    render2(() => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(App, {}))
-  );
-  extend(
-    "Admin::Product::SubscriptionPlan::Create",
-    render2(() => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(App, {}))
-  );
-  extend(
-    "Admin::Product::SubscriptionPlan::Remove",
-    render2(() => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(App, {}))
-  );
-  extend(
-    "Admin::Product::SubscriptionPlan::Edit",
-    render2(() => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(App, {}))
-  );
-  function App() {
-    const { extensionPoint } = useExtensionApi();
-    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(Text2, { children: [
-      "Welcome to the ",
-      extensionPoint,
-      " extension!"
-    ] });
-  }
+  var require_src = __commonJS({
+    "extensions/subscription-product/src/index.tsx"(exports) {
+      "use strict";
+      var import_react15 = __toESM(require_react());
+      init_admin_ui_extensions_react();
+      var import_jsx_runtime3 = __toESM(require_jsx_runtime2());
+      extend(
+        "Admin::Product::SubscriptionPlan::Add",
+        render2(() => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Add, {}))
+      );
+      extend(
+        "Admin::Product::SubscriptionPlan::Create",
+        render2(() => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Create, {}))
+      );
+      extend(
+        "Admin::Product::SubscriptionPlan::Remove",
+        render2(() => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Remove, {}))
+      );
+      extend(
+        "Admin::Product::SubscriptionPlan::Edit",
+        render2(() => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Edit, {}))
+      );
+      var Add = () => {
+        const data = useData();
+        const { close, done, setPrimaryAction, setSecondaryAction } = useContainer();
+        const { getSessionToken } = useSessionToken();
+        const [selectedPlans, setSelectedPlans] = (0, import_react15.useState)([]);
+        const mockPlans = [
+          { name: "Subscription Plan A", id: "a" },
+          { name: "Subscription Plan B", id: "b" },
+          { name: "Subscription Plan C", id: "c" }
+        ];
+        (0, import_react15.useEffect)(() => {
+          setPrimaryAction({
+            content: "Add to plan",
+            onAction: () => __async(exports, null, function* () {
+              yield getSessionToken();
+              done();
+            })
+          });
+          setSecondaryAction({
+            content: "Cancel",
+            onAction: () => close()
+          });
+        }, [getSessionToken, close, done, setPrimaryAction, setSecondaryAction]);
+        return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(TextBlock2, { size: "extraLarge", children: "Hey!" }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(Text2, { children: [
+            "Add Product id ",
+            data.productId,
+            " to an existing plan or existing plans"
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(InlineStack2, { children: mockPlans.map((plan) => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            Checkbox2,
+            {
+              label: plan.name,
+              onChange: (checked) => {
+                const plans = checked ? selectedPlans.concat(plan.id) : selectedPlans.filter((id) => id !== plan.id);
+                setSelectedPlans(plans);
+              },
+              checked: selectedPlans.includes(plan.id)
+            },
+            plan.id
+          )) })
+        ] });
+      };
+      var Create = () => {
+        const data = useData();
+        const { close, done } = useContainer();
+        const { getSessionToken } = useSessionToken();
+        const [planTitle, setPlanTitle] = (0, import_react15.useState)("");
+        const [deliveryFrequency, setDeliveryFrequency] = (0, import_react15.useState)("");
+        const [percentageOff, setPercentageOff] = (0, import_react15.useState)("");
+        const onPrimaryAction = (0, import_react15.useCallback)(() => __async(exports, null, function* () {
+          yield getSessionToken();
+          done();
+        }), [getSessionToken, done]);
+        const cachedActions = (0, import_react15.useMemo)(
+          () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            Actions,
+            {
+              onPrimary: onPrimaryAction,
+              onClose: close,
+              title: "Create plan"
+            }
+          ),
+          [onPrimaryAction, close]
+        );
+        return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(BlockStack2, { spacing: "none", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(TextBlock2, { size: "extraLarge", children: "Hello! Create subscription plan" }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            Card2,
+            {
+              title: `Create subscription plan for Product id ${data.productId}`,
+              sectioned: true,
+              children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+                TextField2,
+                {
+                  label: "Plan title",
+                  value: planTitle,
+                  onChange: setPlanTitle
+                }
+              )
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Card2, { title: "Delivery and discount", sectioned: true, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(InlineStack2, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+              TextField2,
+              {
+                type: "number",
+                label: "Delivery frequency (in weeks)",
+                value: deliveryFrequency,
+                onChange: setDeliveryFrequency
+              }
+            ),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+              TextField2,
+              {
+                type: "number",
+                label: "Percentage off (%)",
+                value: percentageOff,
+                onChange: setPercentageOff
+              }
+            )
+          ] }) }),
+          cachedActions
+        ] });
+      };
+      var Remove = () => {
+        const data = useData();
+        const { close, done, setPrimaryAction, setSecondaryAction } = useContainer();
+        const { getSessionToken } = useSessionToken();
+        (0, import_react15.useEffect)(() => {
+          setPrimaryAction({
+            content: "Remove from plan",
+            onAction: () => __async(exports, null, function* () {
+              yield getSessionToken();
+              done();
+            })
+          });
+          setSecondaryAction({
+            content: "Cancel",
+            onAction: () => close()
+          });
+        }, [getSessionToken, close, done, setPrimaryAction, setSecondaryAction]);
+        return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(TextBlock2, { size: "extraLarge", children: "Hello!" }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(Text2, { children: [
+            "Remove Product id ",
+            data.productId,
+            " from Plan group id",
+            " ",
+            data.sellingPlanGroupId
+          ] })
+        ] });
+      };
+      var Edit = () => {
+        const data = useData();
+        const { close, done } = useContainer();
+        const { getSessionToken } = useSessionToken();
+        const [planTitle, setPlanTitle] = (0, import_react15.useState)("Current plan");
+        const [percentageOff, setPercentageOff] = (0, import_react15.useState)("10");
+        const [deliveryFrequency, setDeliveryFrequency] = (0, import_react15.useState)("1");
+        const onPrimaryAction = (0, import_react15.useCallback)(() => __async(exports, null, function* () {
+          yield getSessionToken();
+          done();
+        }), [getSessionToken, done]);
+        const cachedActions = (0, import_react15.useMemo)(
+          () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Actions, { onPrimary: onPrimaryAction, onClose: close, title: "Edit plan" }),
+          [onPrimaryAction, close]
+        );
+        return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(BlockStack2, { spacing: "none", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(TextBlock2, { size: "extraLarge", children: "Hello! Edit subscription plan" }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            Card2,
+            {
+              title: `Edit subscription plan for Product id ${data.productId}`,
+              sectioned: true,
+              children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+                TextField2,
+                {
+                  label: "Plan title",
+                  value: planTitle,
+                  onChange: setPlanTitle
+                }
+              )
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Card2, { title: "Delivery and discount", sectioned: true, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(InlineStack2, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+              TextField2,
+              {
+                type: "number",
+                label: "Delivery frequency (in weeks)",
+                value: deliveryFrequency,
+                onChange: setDeliveryFrequency
+              }
+            ),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+              TextField2,
+              {
+                type: "number",
+                label: "Percentage off (%)",
+                value: percentageOff,
+                onChange: setPercentageOff
+              }
+            )
+          ] }) }),
+          cachedActions
+        ] });
+      };
+      function Actions({ onPrimary, onClose, title }) {
+        return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(InlineStack2, { inlineAlignment: "trailing", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Button2, { title: "Cancel", onPress: onClose }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Button2, { title, onPress: onPrimary, kind: "primary" })
+        ] });
+      }
+    }
+  });
+
+  // <stdin>
+  var import_src = __toESM(require_src());
 })();
