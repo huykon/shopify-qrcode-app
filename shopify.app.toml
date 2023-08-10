@@ -2,7 +2,7 @@
 
 name = "qrcode-app"
 client_id = "5f9304b1a4f69097ccbb0fc91bb90aa0"
-application_url = "https://term-open-resource-thing.trycloudflare.com"
+application_url = "https://airports-spots-vcr-responsible.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,9 +11,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://term-open-resource-thing.trycloudflare.com/auth/callback",
-  "https://term-open-resource-thing.trycloudflare.com/auth/shopify/callback",
-  "https://term-open-resource-thing.trycloudflare.com/api/auth/callback"
+  "https://airports-spots-vcr-responsible.trycloudflare.com/auth/callback",
+  "https://airports-spots-vcr-responsible.trycloudflare.com/auth/shopify/callback",
+  "https://airports-spots-vcr-responsible.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
